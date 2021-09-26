@@ -81,11 +81,8 @@ return channels.find(correctName => correctName.name === channelName)
  ****************************************************************/
 function getChannelByVideoTitle(videoTitle, channels) {
 
-  //return channels.some(correctTitle =>  correctTitle.title === channel.videos.find(z=> z.videos === videoTitle) )
+return channels.find(channel =>  channelHasVideo(videoTitle, channel) )
 
-//return channels.find(x=> x.title === videoTitle)
-
-  // Your code here
 }
 console.log(getChannelByVideoTitle("The Universal S", channels));
 
@@ -98,9 +95,11 @@ console.log(getChannelByVideoTitle("The Universal S", channels));
  * Hint: use string method `.includes()` and iteration method `.filter()`
  ****************************************************************/
 function searchChannels(query, channels) {
+
+
   // Your code here
 }
-// console.log(searchChannels("the", channels))
+ console.log(searchChannels("the", channels))
 
 module.exports = {
   getChannelName,
