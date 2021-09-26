@@ -47,7 +47,7 @@ function numberOfVideos(channel) {
 
 function channelHasVideo(videoTitle, channel) {
 
-return channel.videos.some(correctTitle =>  correctTitle.title === videoTitle )
+return channel.videos.some(video =>  video.title === videoTitle )
  
 }
   // Your code here
@@ -66,7 +66,7 @@ return channel.videos.some(correctTitle =>  correctTitle.title === videoTitle )
  ****************************************************************/
 function getChannelByName(channelName, channels) {
 
-return channels.find(correctName => correctName.name === channelName)
+return channels.find(channel => channel.name === channelName)
   // Your code here
 }
  console.log(getChannelByName("PowerfulJRE", channels))
@@ -80,6 +80,8 @@ return channels.find(correctName => correctName.name === channelName)
  * BONUS: use iteration methods `.find()` and `.some()`
  ****************************************************************/
 function getChannelByVideoTitle(videoTitle, channels) {
+
+ // return channels.find(channel => 
 
 return channels.find(channel =>  channelHasVideo(videoTitle, channel) )
 
@@ -96,7 +98,7 @@ console.log(getChannelByVideoTitle("The Universal S", channels));
  ****************************************************************/
 function searchChannels(query, channels) {
 
-
+ return channels.filter(channel => channel.name.includes(query) || channel.description.includes(query))
   // Your code here
 }
  console.log(searchChannels("the", channels))
